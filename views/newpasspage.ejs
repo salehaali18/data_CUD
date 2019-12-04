@@ -1,0 +1,19 @@
+
+
+<form action='/newupdatepass' method="POST">
+    <p class="lead">update!</p>
+    <div class="form-group">
+        <input  type="password" name="oldpassword"  placeholder="Old password">
+    </div>
+    <div class="form-group">
+        <input  type="password"  placeholder="New Password" name="newpassword">
+    </div>
+    <div class="form-group">
+        
+        <input type="hidden" name="_csrf" value="<%=csrftoken%>">
+        <input type="hidden" name="admin_id" value="<%=adminId%>">
+            <input type="hidden" name="token" value="<%=fetch_token%>">
+        <input type="submit"  name="submit" value="update">
+        
+    </div>
+ </form>

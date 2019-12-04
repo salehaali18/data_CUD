@@ -1,0 +1,29 @@
+{
+  "name": "project01",
+  "version": "1.0.0",
+  "description": "project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "saleha",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-mongodb-session": "^2.2.0",
+    "crypto": "^1.0.1",
+    "csurf": "^1.10.0",
+    "ejs": "^2.7.3",
+    "express": "^4.17.1",
+    "express-flash": "0.0.2",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.3.0",
+    "mongodb": "^3.3.4",
+    "mongoose": "^5.7.11",
+    "nodemailer": "^6.3.1",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "nodemon": "^1.19.4"
+  }
+}

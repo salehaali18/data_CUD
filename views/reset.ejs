@@ -1,0 +1,21 @@
+<html>
+<center>
+<div class="courses_box1">
+    <div class="container">
+          <form action='/passwordreset' method="POST">
+         <b><p class="lead">Welcome Back!</p></b>
+         <div class="form-group">
+             EMAIL<input  type="email" name="email"  placeholder="Username">
+         </div>
+         <div class="form-group">
+             <input type="hidden" name="_csrf" value="<%=csrftoken%>">
+             
+             <button type="submit">reset</button>
+             
+         </div>
+         
+      </form>
+    </div>
+ </div>
+ </center>
+ </html>

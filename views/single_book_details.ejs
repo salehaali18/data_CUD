@@ -1,0 +1,67 @@
+<html>
+  <head>
+<style>
+
+
+    #customers {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    #customers td, #customers th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+    
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+    
+    #customers tr:hover {background-color: #ddd;}
+    
+    #customers th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: blueviolet;
+      color: white;
+    }
+    </style>
+    </head>
+    <body bgcolor=" aqua">
+  
+  
+    <title><%=title%></title>
+</head>
+<body>
+    <button type="button"><a href="/dashboard"><b>BACK</b></a></button><br><br><br>
+    <table id="customers">
+        <tr>
+           
+            <th>Book Title</th>
+            <th>Book name</th>
+          <th>Book Publication</th>
+          <th>Author</th>
+         
+      
+          
+        </tr>
+        <tr>
+          
+          <td><%=data.title%></td>
+          <td><%=data.book_name%></td>
+          <td><%=data.book_publication%></td>
+          <td><%=data.book_author%></td>
+         
+          
+        </tr>
+        
+       
+      </table>
+      <center>
+                  
+              <br> <button type="button" id="button"><a href="/edit_book/<%=data._id%>?edit=true">EDIT</a></button>
+              <br><br><br><button type="button" id="button"><a href="/delete_book/<%=data._id%>">DELETE</a></button>
+              
+              </center>
+</body>
+</html>
