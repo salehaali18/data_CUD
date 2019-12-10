@@ -52,6 +52,7 @@ const fileStorage = multer.diskStorage({
 
 app.use(body_parser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,'public')));
+app.use('/images',express.static(path.join(__dirname,'images')));
 
 app.use(multer({storage:fileStorage ,fileFilter:fileFilter}).single('image'));
 
@@ -61,7 +62,7 @@ app.use(session({
     saveUninitialized:false,
     store:session_store,
     cookie: {
-        maxAge: 1000*60
+        maxAge: 1000 * 60 * 60 * 24 * 1
         //1000 * 60 * 60 * 24 * 1 // 1 day
       },
 }))

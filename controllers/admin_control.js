@@ -158,7 +158,9 @@ exports.postUpdatebook=(req,res,next)=>{
     const book_name=req.body.book_name;
     const book_publication=req.body.book_publication;
     const book_author=req.body.book_author;
-    Admindetails.bookUpdate(title,book_name,book_publication,book_author,book_id)
+    const filePath = req.file.path;
+
+    Admindetails.bookUpdate(title,book_name,book_publication,book_author,book_id,filePath)
     .then(result=>{
         console.log('update values');
         res.redirect('/dashboard');

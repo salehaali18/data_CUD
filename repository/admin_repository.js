@@ -41,7 +41,7 @@ static view_book(book_id){
     })
 }
 
-static bookUpdate(title,book_name,book_publication,book_author,book_id){
+static bookUpdate(title,book_name,book_publication,book_author,book_id,filePath){
 
    return adminModel.findById(book_id)
     .then(details=>{    ///this details full mongoose object
@@ -51,6 +51,7 @@ static bookUpdate(title,book_name,book_publication,book_author,book_id){
         details.book_name=book_name;
         details.book_publication=book_publication;
         details.book_author=book_author;
+        details.imagePath=filePath;
    return details.save()
    .then(result=>{
       return result;
