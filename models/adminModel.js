@@ -18,6 +18,11 @@ const AdminData=new Schema({
         type:String,
         require:true
     },
+    imagePath: {
+        type: String,
+        require: true
+    },
+
     adminId:{
         type:Schema.Types.ObjectId,
         ref:'Userinfo',

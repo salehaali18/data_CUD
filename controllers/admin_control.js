@@ -91,8 +91,18 @@ exports.postAddbook=(req,res,next)=>{
 
 // })
 
+
 const admin=req.session.login_admin_data._id;
-const Admindata=new Admindetails(req.body.title,req.body.book_name,req.body.book_publication,req.body.book_author,admin)
+
+const filePath = req.file.path;
+// if(!filePath){
+
+// }
+// else{
+
+// }
+const Admindata=new Admindetails(req.body.title,req.body.book_name,
+    req.body.book_publication,req.body.book_author,admin,filePath)
 return Admindata.book_save()
 .then(result=>{
     console.log(result);

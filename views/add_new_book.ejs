@@ -194,7 +194,7 @@ $(document).ready(function(){
 	</div> -->
 <body>
 <center>
-        <form action="<%if(editable){%>/book_update<%}else{%>/book_save<%}%>" method="post"> 
+        <form action="<%if(editable){%>/book_update<%}else{%>/book_save<%}%>" method="post" enctype="multipart/form-data"> 
             
             <p class="lead">Welcome Back! ....
                      BOOK DETAILS</p>
@@ -211,8 +211,12 @@ $(document).ready(function(){
                             <input  type="text" name="book_author" class="required form-control"  id="book_author"  value="<%if(editable){%><%=data.book_author%><%}%>" placeholder="book_author">
                         </div>
 
+                        <div class="form-group">
+                          <input  type="file" name="image" class="required form-control"  id="image"   placeholder="images">
+                      </div>
+                      <input type="hidden" name="_csrf" value="<%=csrftoken%>">
                         <input type="hidden" name="id" value="<%if(editable){%><%=data._id%><%}%>">
-                        <input type="hidden" name="_csrf" value="<%=csrftoken%>">
+                        
            
            <br><br> <button type="submit"><%if(editable){%>Book Update<%}else{%>Book Add<%}%></button></center>
         </form>

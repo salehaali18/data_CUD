@@ -51,7 +51,7 @@ res.render('reset',{
 exports.postPasswordReset=(req,res,next)=>{
     UserModel.findOne({email:req.body.email})
     .then(emailExistorNot=>{
-        if (emailExistorNot) {
+        if(emailExistorNot) {
             crypto.randomBytes(32,(err,buffer)=>{
                 if(!err){
                     let token=buffer.toString('hex');
@@ -411,15 +411,15 @@ exports.postUpdate=(req,res,next)=>{
     bcrypt.compare(req.body.password,details.password)
     .then(domatch=>{
         if(!domatch){
-return bcrypt.hash(req.body.password,12)
-.then(updatehass=>{
+ return bcrypt.hash(req.body.password,12)
+ .then(updatehass=>{
     details.phone=req.body.phone;
    details.password=updatehass;
    return details.save()
    .then(result=>{
-                        console.log('updated');
-                        res.redirect('/dashboard');
-                    }).catch(err=>{
+    console.log('updated');
+     res.redirect('/dashboard');
+             }).catch(err=>{
                         console.log(err);
                     })
 })

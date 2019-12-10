@@ -1,12 +1,13 @@
 const adminModel=require('../models/adminModel');
 
 class Adminbookdata{
-constructor(title,book_name,book_publication,book_author,adminId){
+constructor(title,book_name,book_publication,book_author,adminId,filePath){
     this.title=title;
     this.book_name=book_name;
     this.book_publication=book_publication;
     this.book_author=book_author;
     this.adminId=adminId;
+    this.filePath = filePath;
 }
 book_save()
 {
@@ -15,6 +16,7 @@ book_save()
         book_name:this.book_name,
         book_publication:this.book_publication,
         book_author:this.book_author,
+        imagePath:this.filePath,
         adminId:this.adminId
     })
     return Admin_book.save()
