@@ -41,6 +41,7 @@
             <th>Book name</th>
           <th>Book Publication</th>
           <th>Author</th>
+          <th>Image</th>
          
       
           
@@ -51,7 +52,7 @@
           <td><%=data.book_name%></td>
           <td><%=data.book_publication%></td>
           <td><%=data.book_author%></td>
-          <td><img src="/<%= data.imagePath %>" alt="<%= data.title %>"></td>
+          <td><img src="/<%= data.imagePath %>" alt="<%= data.title %>" style="max-height: 150px"><br><a href="/<%= data.imagePath %>">view</a></td>
          
           
         </tr>

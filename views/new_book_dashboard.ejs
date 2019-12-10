@@ -49,9 +49,12 @@ $(document).ready(function(){
 	    <!--/.navbar-header-->
 	    <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" style="height: 1px;">
 	        <ul class="nav navbar-nav">
-		        <li class="dropdown">
-		            <a href='/logout'><i class="fa fa-user"></i><span>Logout</span></a>
-		        </li>
+		        <form action="/logout" method="POST">
+					<input type="hidden" name="_csrf" value="<%=csrftoken%>">
+
+				<button type="submit" class="fa fa-user">logout</button>
+				</form>
+
 		        <!-- <li class="dropdown">
 		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-list"></i><span>Courses</span></a>
 		        	  <ul class="dropdown-menu">
@@ -121,18 +124,19 @@ $(document).ready(function(){
 									}
 									
 									#customers td, #customers th {
-									  border: 1px solid #ddd;
+									  border: 3px solid #ddd;
 									  padding: 8px;
+									  text-align: center;
 									}
 									
-									#customers tr:nth-child(even){background-color: #f2f2f2;}
+									#customers tr:nth-child(even){background-color: #f2f2f2; text-align: center;}
 									
-									#customers tr:hover {background-color: #ddd;}
+									#customers tr:hover {background-color: #ddd;text-align: center;}
 									
 									#customers th {
 									  padding-top: 12px;
 									  padding-bottom: 12px;
-									  text-align: left;
+									  text-align: center;
 									  background-color: yellowgreen;
 									  color: white;
 									}
@@ -143,29 +147,31 @@ $(document).ready(function(){
 
                         
 <body>
-
-   
-			<h1><b>Book name</b></h1>	
+		<br> <br><br><button type="button"><a href="/add_book">Add Book</a></button><br> <br><br>
+<center>	<table id="customers">
+			<tr>
+				<th><b>Book name</b></th>	</tr>
 			<%if(data.length>0){ %>
 				<%for(let d of data) {%>
-					
-					<h1><%=d.book_name%></h1>
-					<button type="button"><a href="/book_details/<%=d._id%>">View Book Details</a></button>
+					<tr>
+					<td><b><%=d.book_name%>
+					<br><button type="button"><a href="/book_details/<%=d._id%>">View Book Details</a></button>
 					<%}%>
-					
-					
+				</b></td>
+				</tr>
 		
 					
-		
+		<tr>
 				<%} else{%>
-						<h1>Book not found</h1>
+				<td>Book not found</td>
 					<% } %>
-		
+				</tr>
 				
 			  
 				
 	
-	   <br> <br><br><button type="button"><a href="/add_book">Add Book</a></button></center>
-	
+	   
+			</center>
 </body>
+
 </html>
