@@ -120,7 +120,7 @@ $(document).ready(function(){
 									#customers {
 									  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 									  border-collapse: collapse;
-									  width: 100%;
+									  width: 30%;
 									}
 									
 									#customers td, #customers th {
@@ -137,7 +137,7 @@ $(document).ready(function(){
 									  padding-top: 12px;
 									  padding-bottom: 12px;
 									  text-align: center;
-									  background-color: yellowgreen;
+									  background-color: rgb(205, 143, 50);
 									  color: white;
 									}
 									</style>
@@ -147,8 +147,9 @@ $(document).ready(function(){
 
                         
 <body>
-		<br> <br><br><button type="button"><a href="/add_book">Add Book</a></button><br> <br><br>
-<center>	<table id="customers">
+		
+<center>
+		<table id="customers">
 			<tr>
 				<th><b>Book name</b></th>	</tr>
 			<%if(data.length>0){ %>
@@ -169,7 +170,7 @@ $(document).ready(function(){
 				
 			  
 				
-	
+				<br> <br><br><button type="button"><a href="/add_book">Add Book</a></button><br> <br><br>
 	   
 			</center>
 </body>
